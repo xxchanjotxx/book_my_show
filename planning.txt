@@ -1,0 +1,15 @@
+We need a reusable carousels(sliders with cards)
+->hero carousel
+->common carousel
+-> cast and crew small carousel
+
+
+PAGES:-
+-> Home
+-> Movie
+-> Category
+-> Auth 
+-> Razorpay
+
+Build:
+layouts->routes->pages->components
