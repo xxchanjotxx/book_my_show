@@ -13,7 +13,12 @@ const HomePage = () => {
         </h1>
         <EntertainmentCardSlider />
       </div>
-      <Premier />
+
+      <div className="container mx-auto px-4 py-3">
+        <h1 className="text-2xl font-bold text-grey-700 my-3">Premiers</h1>
+        <h3 className="text-sm pb-3">Brand new releases every Friday</h3>
+        <Premier />
+      </div>
     </>
   );
 };
