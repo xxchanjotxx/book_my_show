@@ -3,7 +3,6 @@ import React from "react";
 //components
 import EntertainmentCardSlider from "../components/Entertainment/entertaimentCard.component";
 import PosterSlider from "../components/PosterSlider/posterSlider.component";
-import Premier from "../components/Premier/premier.component";
 
 //config
 import PremierImages from "../config/TempPosters.config";
