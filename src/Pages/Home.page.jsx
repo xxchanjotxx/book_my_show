@@ -33,7 +33,7 @@ const HomePage = () => {
               />
             </div>
           </div>
-          <PosterSlider images={PremierImages} title={PremierImages.title} subtitle={PremierImages.subtitle}/>
+          <PosterSlider images={PremierImages} title="Premiers" subtitle="Brand new releases every Friday"/>
         </div>
       </div>
     </>

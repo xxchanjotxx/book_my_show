@@ -8,7 +8,6 @@ import PosterCarouselSettings from "../../config/posterCarousel.config";
 
 
 
-
 const PosterSlider = (props) => {
   return (
     <>
@@ -19,7 +18,7 @@ const PosterSlider = (props) => {
 
       <Slider {...PosterCarouselSettings}>
         {props.images.map((image) => (
-          <Poster {...image} />
+          <Poster {...image} isDark/>
         ))}
       </Slider>
     </>
