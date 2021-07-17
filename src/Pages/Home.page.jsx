@@ -7,8 +7,6 @@ import PosterSlider from "../components/PosterSlider/posterSlider.component";
 //config
 import PremierImages from "../config/TempPosters.config";
 
-
-
 const HomePage = () => {
   return (
     <>
@@ -32,8 +30,29 @@ const HomePage = () => {
               />
             </div>
           </div>
-          <PosterSlider images={PremierImages} title="Premiers" subtitle="Brand new releases every Friday"/>
+          <PosterSlider
+            images={PremierImages}
+            title="Premiers"
+            subtitle="Brand new releases every Friday"
+            isDark={true}
+          />
         </div>
+      </div>
+
+      <div className="container mx-auto px-4 py-3 m-20">
+        <PosterSlider
+          images={PremierImages}
+          title="Online Streaming Events"
+          isDark={false}
+        />
+      </div>
+
+      <div className="container mx-auto px-4 py-3 m-20">
+        <PosterSlider
+          images={PremierImages}
+          title="Outdoor Events"
+          isDark={false}
+        />
       </div>
     </>
   );
