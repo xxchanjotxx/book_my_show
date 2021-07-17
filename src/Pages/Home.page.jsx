@@ -1,7 +1,14 @@
 import React from "react";
 
+//components
 import EntertainmentCardSlider from "../components/Entertainment/entertaimentCard.component";
+import PosterSlider from "../components/PosterSlider/posterSlider.component";
 import Premier from "../components/Premier/premier.component";
+
+//config
+import PremierImages from "../config/TempPosters.config";
+
+
 
 const HomePage = () => {
   return (
@@ -26,11 +33,9 @@ const HomePage = () => {
               />
             </div>
           </div>
-          <Premier />
+          <PosterSlider images={PremierImages} title={PremierImages.title} subtitle={PremierImages.subtitle}/>
         </div>
       </div>
-
-      {/* {  */}
     </>
   );
 };
