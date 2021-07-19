@@ -6,10 +6,8 @@ import PosterSlider from "../components/PosterSlider/posterSlider.component";
 //config
 import PremierImages from "../config/TempPosters.config";
 
-
 import { SiApplepay, SiGooglepay } from "react-icons/si";
 const MoviePage = () => {
-
   // settings for movie carousal
   const settings = {
     infinity: false,
@@ -44,7 +42,6 @@ const MoviePage = () => {
     ],
   };
 
-  
   return (
     <>
       <MovieHero />
@@ -97,9 +94,9 @@ const MoviePage = () => {
         </div>
 
         <div>
-        <h3 className="font-semibold text-2xl mb-5">Cast</h3>
+          <h3 className="font-semibold text-2xl mb-5">Cast</h3>
           <div className="flex flex-wrap gap-6">
-           <Cast
+            <Cast
               image="https://in.bmscdn.com/iedb/artist/images/website/poster/large/ben-affleck-292-12-09-2017-05-12-16.jpg"
               castName="Ben Affleck"
               role="Batman"
@@ -121,15 +118,27 @@ const MoviePage = () => {
           <hr />
         </div>
 
+        <div>
+          <PosterSlider
+            config={settings}
+            images={PremierImages}
+            title="You Might Also Like"
+            isDark={false}
+          />
+        </div>
+
+        <div className="my-10">
+          <hr />
+        </div>
 
         <div>
-        <PosterSlider
-          config={settings}
-          images={PremierImages}
-          title="You Might Also Like"
-          isDark={false}
-        />
-      </div>
+          <PosterSlider
+            config={settings}
+            images={PremierImages}
+            title="BMS Exclusive"
+            isDark={false}
+          />
+        </div>
       </div>
     </>
   );
