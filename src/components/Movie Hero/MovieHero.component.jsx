@@ -31,7 +31,7 @@ const MovieHero = () => {
         className="relative hidden md:block lg:hidden h-full"
         style={{ height: "calc(85vw)" }}
       >
-        <div className="absolute z-30 bottom-4">
+        <div className="absolute z-30 bottom-4 ">
           <MovieInfo />
         </div>
 

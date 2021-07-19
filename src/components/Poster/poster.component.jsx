@@ -4,7 +4,7 @@ const Poster = (props) => {
   return (
     <>
       <div className="flex flex-col items-start gap-2 px-2">
-        <div className="h-40 md:h-80">
+        <div className={`h-40 md:h-80 ${ props.premiere ? "h-80" : "h-20" }`}>
           <img
             src={props.src}
             alt={props.title}
