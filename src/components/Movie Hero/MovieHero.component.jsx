@@ -29,10 +29,14 @@ const MovieHero = () => {
       {/* Tablet */}
       <div
         className="relative hidden md:block lg:hidden h-full"
-        style={{ height: "calc(100vw)" }}
+        style={{ height: "calc(85vw)" }}
       >
+        <div className="absolute z-30 bottom-4">
+          <MovieInfo />
+        </div>
+
         {/* ADDING BLACK COLOR AT BOTTOM */}
-        <div className="w-full h-56 bg-opacity-60 absolute bottom-0 bg-black z-10 "></div>
+        <div className="w-full h-48 bg-opacity-95 absolute bottom-0 bg-black z-10 "></div>
 
         <img
           src="https://in.bmscdn.com/iedb/movies/images/extra/vertical_logo/mobile/thumbnail/xxlarge/zack-snyder-s-justice-league-et00047164-10-04-2021-03-22-49.jpg"

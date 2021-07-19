@@ -38,15 +38,15 @@ const MovieInfo = () => {
           </div>
 
           {/* buttons */}
-          <div className="flex item-center gap-3 mb-6">
+          <div className="flex item-center gap-3 mb-6 md:w-screen lg:w-full">
             <button
-              className="text-white lg:px-24 rounded-lg lg:py-3 px-11 py-2"
+              className="text-white lg:px-24 rounded-lg lg:py-3 px-11 py-2 md:w-full"
               style={{ backgroundColor: "#ED4163" }}
             >
               Rent ₹159
             </button>
             <button
-              className="text-white lg:px-24 rounded-lg lg:py-3 px-11 py-2"
+              className="text-white lg:px-24 rounded-lg lg:py-3 px-11 py-2 md:w-full"
               style={{ backgroundColor: "#ED4163" }}
             >
               Buy ₹689
