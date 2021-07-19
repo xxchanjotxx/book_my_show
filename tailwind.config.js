@@ -5,7 +5,8 @@ module.exports = {
     extend: {
       colors: {
         navbar_color: {
-          50: "#edf1fc",
+          // 50 for streaming now in movie info
+          50: "#1F263A",
           100: "#d3d4e1",
           200: "#b6b8c9",
           300: "#989bb2",

@@ -1,9 +1,11 @@
-const MoviePage = () => {
-    return (
-        <div>
-            Hello
-        </div>
-    )
-}
+import MovieHero from "../components/Movie Hero/MovieHero.component";
 
-export default MoviePage
+const MoviePage = () => {
+  return (
+    <>
+      <MovieHero />
+    </>
+  );
+};
+
+export default MoviePage;

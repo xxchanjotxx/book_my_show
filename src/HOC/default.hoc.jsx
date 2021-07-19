@@ -10,9 +10,10 @@ const DefaultHOC = ({ component: Component, ...demo }) => {
     <>
       <Route
         {...demo}
-        component={(props) => (
-          <DefaultLayout>
-            <Component {...props}/>
+        component={() => (
+          <DefaultLayout COMPONENT={Component}>
+            <Component />
+            <xyz />
           </DefaultLayout>
         )}
       />
