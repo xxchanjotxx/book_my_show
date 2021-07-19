@@ -5,7 +5,7 @@ const MovieInfo = () => {
     <>
       <div>
         {/* Premier line */}
-        <div className="pb-4 flex items-center gap-3 mb-3 md:px-4">
+        <div className="pb-4 flex items-center gap-3 mb-3 md:px-4 md:py-2">
           <div className="w-24 h-6">
             <img
               src="https://in.bmscdn.com/moviemode/tvod/premiere-tag.png"
@@ -19,7 +19,7 @@ const MovieInfo = () => {
         </div>
 
         {/* title */}
-        <h1 className="text-white lg:text-4xl font-semibold lg:mb-7 hidden lg:block">
+        <h1 className="text-white lg:text-4xl font-semibold lg:mb-7 hidden lg:block px-4">
           Zack Snyder`s Justice League
         </h1>
 
