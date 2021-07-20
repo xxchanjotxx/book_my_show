@@ -11,12 +11,14 @@ import "slick-carousel/slick/slick-theme.css";
 //importing pages
 import HomePage from "./Pages/Home.page";
 import MoviePage from "./Pages/Movie.page";
+import PlaysPage from "./Pages/Plays.page";
 
 function App() {
   return (
     <>
       <DefaultHOC path="/" exact component={HomePage} />
       <MovieHOC path="/movie/:id" exact component={MoviePage} />
+      <DefaultHOC path="/plays" exact component={PlaysPage} />
     </>
   );
 }
