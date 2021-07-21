@@ -17,7 +17,7 @@ function PlaysFilter(props) {
           </div>
 
           <div className={open ? "my-6" : "my-2"}>
-            <Disclosure.Panel className="text-gray-500">
+            <Disclosure.Panel>
               <div className="flex items-centre gap-3 flex-wrap">
                 {props.tags.map((tag) => (
                   <>

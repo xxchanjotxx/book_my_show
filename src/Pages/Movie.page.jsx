@@ -6,9 +6,11 @@ import PosterSlider from "../components/PosterSlider/posterSlider.component";
 //config
 import PremierImages from "../config/TempPosters.config";
 
+// icons
 import { SiApplepay, SiGooglepay } from "react-icons/si";
+
 const MoviePage = () => {
-  // settings for movie carousal
+  // settings for carousels in movie pages
   const settings = {
     infinity: false,
     speed: 500,
@@ -44,8 +46,13 @@ const MoviePage = () => {
 
   return (
     <>
+      {/* Movie hero poster */}
       <MovieHero />
+
+      {/* Rest of the page */}
+
       <div className="container lg:ml-24 px-4 my-5 lg:w-2/3">
+        {/* About the movie */}
         <div className="flex flex-col items-start gap-3">
           <h2 className="font-bold text-2xl mt-5">About the Movie</h2>
           <p>
@@ -59,9 +66,11 @@ const MoviePage = () => {
           <hr />
         </div>
 
+        {/* Coupons */}
         <div className="my-10">
           <h3 className="font-semibold text-2xl mb-5">Applicable Offers</h3>
           <div className="flex flex-col gap-4 lg:flex-row">
+            {/* one coupon with logo and content */}
             <div className="flex gap-3 bg-yellow-100 p-3 border-yellow-400 border-dashed border-2 rounded-lg ">
               <div className="w-16 h-12">
                 <SiApplepay className="w-full h-full" />
@@ -74,6 +83,8 @@ const MoviePage = () => {
                 </p>
               </div>
             </div>
+
+            {/* one coupon with logo and content */}
             <div className="flex gap-3 bg-yellow-100 p-3 border-yellow-400 border-dashed border-2 rounded-lg ">
               <div className="w-16 h-12">
                 <SiGooglepay className="w-full h-full" />
@@ -93,6 +104,7 @@ const MoviePage = () => {
           <hr />
         </div>
 
+        {/* Cast */}
         <div>
           <h3 className="font-semibold text-2xl mb-5">Cast</h3>
           <div className="flex flex-wrap gap-6">
@@ -118,6 +130,7 @@ const MoviePage = () => {
           <hr />
         </div>
 
+        {/* creating a poster slider with custom settings */}
         <div>
           <PosterSlider
             config={settings}

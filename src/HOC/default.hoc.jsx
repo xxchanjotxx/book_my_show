@@ -3,19 +3,22 @@ import { Route } from "react-router-dom";
 
 import DefaultLayout from "../Layouts/default.layout";
 
-//passing props as demo so that there is no name clash 
+//passing props as demo so that there is no name clash
 const DefaultHOC = ({ component: Component, ...demo }) => {
-  //const Component = component; same as component: Component 
+  //const Component = component; same as component: Component
   return (
     <>
+      {/* Routing and using path and exact */}
       <Route
         {...demo}
-        component={() => (
-          <DefaultLayout COMPONENT={Component}>
-            <Component />
-            <xyz />
-          </DefaultLayout>
-        )}
+        component={(props) => {
+          return (
+            <DefaultLayout>
+              {/* Renders the homepage as the component */}
+              <Component {...props} />
+            </DefaultLayout>
+          );
+        }}
       />
     </>
   );

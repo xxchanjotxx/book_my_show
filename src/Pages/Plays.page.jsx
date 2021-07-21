@@ -65,6 +65,8 @@ const PlaysPage = () => {
             <h2 className="text-2xl lg:text-3 xl font-semibold my-4">
               Filters
             </h2>
+
+            {/* Filters titles */}
             <div className="my-3 bg-white ">
               <Filter
                 title="Date"

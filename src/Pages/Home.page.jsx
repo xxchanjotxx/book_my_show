@@ -9,7 +9,6 @@ import PremierImages from "../config/TempPosters.config";
 
 const HomePage = () => {
   // setttings for premiere 1 and rest 3
-
   const settings = {
     infinity: false,
     speed: 500,
@@ -45,6 +44,7 @@ const HomePage = () => {
 
   return (
     <>
+    {/* Entertainment Section */}
       <div className="container mx-auto px-4 mt-20">
         <h1 className="text-2xl font-bold text-grey-700 my-3">
           {" "}

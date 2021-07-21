@@ -11,12 +11,15 @@ const MovieHero = () => {
         className="relative md:hidden w-full"
         style={{ height: "calc(180vw)" }}
       >
+
         <div className="absolute z-30 bottom-6 left-4">
           <MovieInfo />
         </div>
+
         {/* ADDING BLACK COLOR AT BOTTOM */}
         <div className="w-full h-56 bg-opacity-60 absolute bottom-0 bg-black z-10 "></div>
 
+        {/* Background poster */}
         <div className="h-full">
           <img
             src="https://in.bmscdn.com/iedb/movies/images/extra/vertical_logo/mobile/thumbnail/xxlarge/zack-snyder-s-justice-league-et00047164-10-04-2021-03-22-49.jpg"
@@ -26,11 +29,13 @@ const MovieHero = () => {
         </div>
       </div>
 
+
       {/* Tablet */}
       <div
         className="relative hidden md:block lg:hidden h-full"
         style={{ height: "calc(85vw)" }}
       >
+
         <div className="absolute z-30 bottom-4 ">
           <MovieInfo />
         </div>
@@ -38,6 +43,7 @@ const MovieHero = () => {
         {/* ADDING BLACK COLOR AT BOTTOM */}
         <div className="w-full h-48 bg-opacity-95 absolute bottom-0 bg-black z-10 "></div>
 
+        {/* Background poster */}
         <img
           src="https://in.bmscdn.com/iedb/movies/images/extra/vertical_logo/mobile/thumbnail/xxlarge/zack-snyder-s-justice-league-et00047164-10-04-2021-03-22-49.jpg"
           alt="poster"
@@ -45,11 +51,13 @@ const MovieHero = () => {
         />
       </div>
 
+
       {/* Lappy */}
       <div
         className="relative lg:block hidden w-full"
         style={{ height: "30rem" }}
       >
+
         {/* gradient for bg */}
         <div
           className="absolute h-full z-10 w-full"
@@ -59,6 +67,7 @@ const MovieHero = () => {
           }}
         />
 
+        {/* Poster */}
         <div className="z-30 left-28 top-12 absolute flex items-center ">
           <div className="w-64 h-96 mr-8">
             <img
@@ -67,6 +76,7 @@ const MovieHero = () => {
               className="w-full h-full rounded-2xl"
             />
           </div>
+          
           {/* movie info */}
           <div className=" z-30">
             <MovieInfo />

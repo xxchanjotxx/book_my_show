@@ -3,6 +3,7 @@ import React from "react";
 import Slider from "react-slick";
 
 const EntertainmentCard = (props) => {
+  // makes the entertainment card
   return (
     <>
       <div className="w-full px-2 h-30">
@@ -17,6 +18,7 @@ const EntertainmentCard = (props) => {
 };
 
 const EntertainmentCardSlider = () => {
+  // Entertainment slider images
   const EntertainmentImage = [
     "https://in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:ote-MjQwKyBFdmVudHM%3D,otc-FFFFFF,otf-Roboto,ots-64,ox-48,oy-320,ott-b:w-300/workshops-collection-202007231330.png",
     "https://in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:ote-MTUrIEV2ZW50cw%3D%3D,otc-FFFFFF,otf-Roboto,ots-64,ox-48,oy-320,ott-b:w-300/fitness-collection-2020081150.png",
@@ -28,6 +30,7 @@ const EntertainmentCardSlider = () => {
     "https://in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:ote-MTUrIEV2ZW50cw%3D%3D,otc-FFFFFF,otf-Roboto,ots-64,ox-48,oy-320,ott-b:w-300/esports-collection-202011150107.png",
   ];
 
+  // settings
   const settings = {
     infinity: false,
     slidesToShow: 4,
@@ -63,12 +66,12 @@ const EntertainmentCardSlider = () => {
 
   return (
     <>
-  
-        <Slider {...settings}>
-          {EntertainmentImage.map((image) => (
-            <EntertainmentCard src={image} />
-          ))}
-        </Slider>
+      {/* Incorporates the slider and renders the image through EntertainmentCard */}
+      <Slider {...settings}>
+        {EntertainmentImage.map((image) => (
+          <EntertainmentCard src={image} />
+        ))}
+      </Slider>
     </>
   );
 };
