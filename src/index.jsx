@@ -6,7 +6,7 @@ import App from "./App";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter basename={window.location.pathname || ""}>
+    <BrowserRouter basename={window.location.pathname || ''}>
       <App />
     </BrowserRouter>
   </React.StrictMode>,
