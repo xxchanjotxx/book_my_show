@@ -18,10 +18,10 @@
     "slick-carousel": "^1.8.1",
     "web-vitals": "^1.1.2"
   },
-  "homepage": "http://xxchanjotxx.github.io/book_my_show"
+  "homepage": "http://xxchanjotxx.github.io/book_my_show",
   "scripts": {
     "start": "craco start",
-    "build": "CI=false && craco build",
+    "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
