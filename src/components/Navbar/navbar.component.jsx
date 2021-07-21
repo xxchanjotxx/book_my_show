@@ -84,7 +84,7 @@ const Nav2Lg = () => {
   return (
     <>
       <div className="container mx-auto px-4 flex items-center justify-between">
-        <div className="flex items-center w-3/5 gap-5">
+        <div className="flex items-center justify-between w-3/5 gap-5">
           {/* Left list */}
           <div className="flex items-center gap-3 text-gray-300 text-sm">
             <ul className="flex items-center gap-5 ">
@@ -109,6 +109,15 @@ const Nav2Lg = () => {
               <li className="hover:text-white">Buzz</li>
             </ul>
           </div>
+        </div>
+        {/* Right list */}
+        <div className="flex items-center flex-end gap-3 text-gray-300 text-sm">
+          <ul className="flex items-center gap-5 ">
+            <li className="hover:text-white">ListYourShow</li>
+            <li className="hover:text-white">Corporates</li>
+            <li className="hover:text-white">Offers</li>
+            <li className="hover:text-white">Gift Cards</li>
+          </ul>
         </div>
       </div>
     </>
