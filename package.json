@@ -18,7 +18,8 @@
     "slick-carousel": "^1.8.1",
     "web-vitals": "^1.1.2"
   },
-  "homepage": "http://xxchanjotxx.github.io/book_my_show",
+  "homepage": "https://xxchanjotxx.github.io/book_my_show",
+  
   "scripts": {
     "start": "craco start",
     "build": "craco build",
