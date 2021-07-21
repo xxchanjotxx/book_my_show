@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/book_my_show/static/css/main.a7462caf.chunk.css",
+    "main.js": "/book_my_show/static/js/main.a2cba7ae.chunk.js",
+    "main.js.map": "/book_my_show/static/js/main.a2cba7ae.chunk.js.map",
+    "runtime-main.js": "/book_my_show/static/js/runtime-main.d8a3af69.js",
+    "runtime-main.js.map": "/book_my_show/static/js/runtime-main.d8a3af69.js.map",
+    "static/css/2.1eafc794.chunk.css": "/book_my_show/static/css/2.1eafc794.chunk.css",
+    "static/js/2.ee1e70e2.chunk.js": "/book_my_show/static/js/2.ee1e70e2.chunk.js",
+    "static/js/2.ee1e70e2.chunk.js.map": "/book_my_show/static/js/2.ee1e70e2.chunk.js.map",
+    "index.html": "/book_my_show/index.html",
+    "static/css/2.1eafc794.chunk.css.map": "/book_my_show/static/css/2.1eafc794.chunk.css.map",
+    "static/css/main.a7462caf.chunk.css.map": "/book_my_show/static/css/main.a7462caf.chunk.css.map",
+    "static/js/2.ee1e70e2.chunk.js.LICENSE.txt": "/book_my_show/static/js/2.ee1e70e2.chunk.js.LICENSE.txt",
+    "static/media/slick-theme.css": "/book_my_show/static/media/slick.c94f7671.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d8a3af69.js",
+    "static/css/2.1eafc794.chunk.css",
+    "static/js/2.ee1e70e2.chunk.js",
+    "static/css/main.a7462caf.chunk.css",
+    "static/js/main.a2cba7ae.chunk.js"
+  ]
+}
