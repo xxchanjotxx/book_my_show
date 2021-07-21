@@ -13,3 +13,6 @@ PAGES:-
 
 Build:
 layouts->routes->pages->components
+
+
+USED: NPM I AXIOS SLIDER ICONS HEADLESSUI

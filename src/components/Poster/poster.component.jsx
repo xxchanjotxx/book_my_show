@@ -25,9 +25,18 @@ const Poster = (props) => {
           {props.title}
         </h3>
 
+        {/* Location if any */}
+        <h3
+          className={`text-sm font-semibold ${
+            props.isDark ? "text-white" : "text-gray-700 "
+          }`}
+        >
+          {props.location}
+        </h3>
+
         {/* Subtitle for movie */}
         <p
-          className={`text-sm ${
+          className={`text-xs ${
             props.isDark ? "text-white" : "text-gray-700 "
           }`}
         >
