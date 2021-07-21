@@ -104,7 +104,7 @@ const Nav2Lg = () => {
               </li>
               <li className="hover:text-white">
                 {" "}
-                <a href="/activities">Activitis</a>{" "}
+                <a href="/activities">Activities</a>{" "}
               </li>
               <li className="hover:text-white">Buzz</li>
             </ul>
