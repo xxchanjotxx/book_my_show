@@ -6,7 +6,7 @@ import App from "./App";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter basename="book_my_show">
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </React.StrictMode>,
