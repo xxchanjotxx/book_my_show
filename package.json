@@ -19,7 +19,6 @@
     "web-vitals": "^1.1.2"
   },
   "homepage": "https://xxchanjotxx.github.io/book_my_show",
-  
   "scripts": {
     "start": "craco start",
     "build": "CI=false && craco build",

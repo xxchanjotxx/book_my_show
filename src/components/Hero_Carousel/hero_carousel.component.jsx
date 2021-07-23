@@ -1,12 +1,26 @@
 import axios from "axios";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import HeroSlider from "react-slick";
-
 
 //importing arrows
 import { NextArrow, PrevArrow } from "./arrows.components";
 
 const HeroCarousel = (props) => {
+  //creating a state for images. Empty array so that it makes API call only once
+  const [images, setImages] = useState([]);
+
+  //calling the data from the api in a function. It is called side-effect in react
+  useEffect(() => {
+    // async call. This is a race condition. If async was used in useEffect, the even chain will be messed up because something else will be executed
+    const requestNowPlaying = async () => {
+      const getImages = await axios.get("/movie/now_playing");
+      setImages(getImages.data.results);
+    };
+
+    //requesting it later after the response is recieved
+    requestNowPlaying();
+  }, []);
+
   // Settings for LG
   const settingsLG = {
     arrows: true,
@@ -34,12 +48,6 @@ const HeroCarousel = (props) => {
     prevArrow: <PrevArrow />,
   };
 
-  // images for the hero carousel
-  const images = [
-    "https://in.bmscdn.com/promotions/cms/creatives/1625110474952_streammoviepage.jpg",
-    "https://in.bmscdn.com/promotions/cms/creatives/1626372121139_bsm_1280x500_romcom_1.jpg",
-  ];
-
   return (
     <>
       {/* Slider for mobile */}
@@ -47,7 +55,12 @@ const HeroCarousel = (props) => {
         <HeroSlider {...settings}>
           {images.map((image) => (
             <div className="w-full h-56 md:h-80 py-3 ">
-              <img src={image} alt="demo" className="w-full h-full rounded" />
+              {/* Using template literal for API poster */}
+              <img
+                src={`https://image.tmdb.org/t/p/original${image.backdrop_path}`}
+                alt="demo"
+                className="w-full h-full rounded"
+              />
             </div>
           ))}
         </HeroSlider>
@@ -58,7 +71,11 @@ const HeroCarousel = (props) => {
         <HeroSlider {...settingsLG}>
           {images.map((image) => (
             <div className="w-full h-96 py-3 px-2 m-0">
-              <img src={image} alt="demo" className="w-full h-full rounded" />
+              <img
+                src={`https://image.tmdb.org/t/p/original${image.backdrop_path}`}
+                alt="demo"
+                className="w-full h-full rounded"
+              />
             </div>
           ))}
         </HeroSlider>

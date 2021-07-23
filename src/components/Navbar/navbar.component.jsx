@@ -143,7 +143,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <nav className="py-4 px-4" style={{ backgroundColor: " #232639" }}>
+      <nav className="py-4 px-4 hidden lg:block" style={{ backgroundColor: " #232639" }}>
         <div className="hidden lg:flex">
           <Nav2Lg />
         </div>

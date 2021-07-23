@@ -17,8 +17,6 @@ import SportsPage from "./Pages/Sports.page";
 import EventsPage from "./Pages/Events.page";
 import ActivitiesPage from "./Pages/Activities.page";
 
-
-
 //axios default settings
 axios.defaults.baseURL = "https://api.themoviedb.org/3";
 
