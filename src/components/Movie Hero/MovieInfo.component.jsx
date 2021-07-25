@@ -1,6 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
+
+// context
+import { MovieContext } from "../../context/movie.context";
 
 const MovieInfo = () => {
+  const { movie } = useContext(MovieContext);
+
+  // for genres, its an array.
+
+  /* Using optional chaining. It will first be checked if movies.genres is available, 
+  if yes we will map and extract all the name to an array
+  and remove the array and join them as a single string with , */
+
+  const genres = movie.genres?.map(({ name }) => name).join(", ");
+  const language = movie.spoken_languages?.map(({ name }) => name).join(", ");
+  
   return (
     <>
       <div>
@@ -20,7 +34,7 @@ const MovieInfo = () => {
 
         {/* title */}
         <h1 className="text-white lg:text-4xl font-semibold lg:mb-7 hidden lg:block px-4">
-          Zack Snyder`s Justice League
+          {movie.original_title}
         </h1>
 
         {/* TO REVERSE IN MD AND SM AND NORMAL IN LARGE */}
@@ -28,12 +42,12 @@ const MovieInfo = () => {
           {/* extra info */}
           <div className="md:px-4">
             <h4 className="text-gray-400 lg:mb-5 mb-4 ">
-              English &bull; Languages:{" "}
+              {language} &bull; Languages:{" "}
               <span style={{ color: "#E5415E" }}>Audio(1), Subtitles(1)</span>{" "}
             </h4>
             <h4 className="text-gray-200 text-xs lg:text-base lg:mb-12">
-              4hrs 1min &bull; Action, Adventure, Fantasy &bull; 16+ &bull; 18
-              Mar, 2021
+              {(movie.runtime / 60).toFixed(2)} hrs &bull; {genres} &bull; 16+
+              &bull; {movie.release_date}
             </h4>
           </div>
 

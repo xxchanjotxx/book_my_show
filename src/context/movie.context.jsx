@@ -9,7 +9,7 @@ const MovieProvider = ({ children }) => {
   //making it default initially and fetching data from api and storing
   const [movie, setMovie] = useState({
     id: 0,
-    original_title: "",
+    original_title: "",   
     overview: "",
     backdrop_path: "",
     poster_path: "",
