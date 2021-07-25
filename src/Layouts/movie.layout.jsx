@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
+
 import MovieNavbar from "../components/Navbar/movieNavbar.component";
 
+// hook
+import { useParams } from "react-router-dom";
+
+// context
+
+import { MovieContext } from "../context/movie.context";
+
 const MovieLayout = (props) => {
+
+  //
+  const { id } = useParams();
+
   return (
     <>
       <MovieNavbar />

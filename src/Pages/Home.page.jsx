@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
+// axios
+import axios from "axios";
 //components
 import EntertainmentCardSlider from "../components/Entertainment/entertaimentCard.component";
 import PosterSlider from "../components/PosterSlider/posterSlider.component";
@@ -8,6 +10,43 @@ import PosterSlider from "../components/PosterSlider/posterSlider.component";
 import PremierImages from "../config/TempPosters.config";
 
 const HomePage = () => {
+  // Movies for the premier page
+  const [popularMovies, setPopularMovies] = useState([]);
+  // Movies for Top Rated Movies
+  const [topRatedMovies, setTopRatedMovies] = useState([]);
+  // Movies for Upcoming Movies
+  const [upcomingMovies, setUpcomingMovies] = useState([]);
+
+  // FOR PREMIER MOVIES
+  useEffect(() => {
+    const requestPopularMovies = async () => {
+      const getPopularMovies = await axios.get("/movie/popular");
+      setPopularMovies(getPopularMovies.data.results);
+    };
+
+    requestPopularMovies();
+  }, []);
+
+  // FOR TOP RATED MOVIES
+  useEffect(() => {
+    const requestTopRatedMovies = async () => {
+      const getTopRatedMovies = await axios.get("/movie/top_rated");
+      setTopRatedMovies(getTopRatedMovies.data.results);
+    };
+
+    requestTopRatedMovies();
+  }, []);
+
+  // FOR UPCOMING MOVIES
+  useEffect(() => {
+    const requestUpcomingMovies = async () => {
+      const getUpcomingMovies = await axios.get("/movie/upcoming");
+      setUpcomingMovies(getUpcomingMovies.data.results);
+    };
+
+    requestUpcomingMovies();
+  }, []);
+
   // setttings for premiere 1 and rest 3
   const settings = {
     infinity: false,
@@ -44,7 +83,7 @@ const HomePage = () => {
 
   return (
     <>
-    {/* Entertainment Section */}
+      {/* Entertainment Section */}
       <div className="container mx-auto px-4 mt-20">
         <h1 className="text-2xl font-bold text-grey-700 my-3">
           {" "}
@@ -65,10 +104,13 @@ const HomePage = () => {
               />
             </div>
           </div>
+
+          {/* Making premiere posters here by passing the movie poster from API and then go to Poster 
+          and refer to the changes */}
           <PosterSlider
             premiere={true}
             config={settings}
-            images={PremierImages}
+            images={popularMovies}
             title="Premiers"
             subtitle="Brand new releases every Friday"
             isDark={true}
@@ -78,16 +120,16 @@ const HomePage = () => {
 
       <div className="container mx-auto px-4 py-3 m-14">
         <PosterSlider
-          images={PremierImages}
-          title="Online Streaming Events"
+          images={topRatedMovies}
+          title="Top Rated Movies"
           isDark={false}
         />
       </div>
 
       <div className="container mx-auto px-4 py-3 m-14">
         <PosterSlider
-          images={PremierImages}
-          title="Outdoor Events"
+          images={upcomingMovies}
+          title="Upcoming Movies"
           isDark={false}
         />
       </div>
