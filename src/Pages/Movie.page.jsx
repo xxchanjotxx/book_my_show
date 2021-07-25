@@ -1,15 +1,65 @@
+import React, { useContext, useEffect, useState } from "react";
 //component
 import MovieHero from "../components/Movie Hero/MovieHero.component";
 import Cast from "../components/Cast/Cast.component";
 import PosterSlider from "../components/PosterSlider/posterSlider.component";
-
 //config
 import PremierImages from "../config/TempPosters.config";
-
 // icons
 import { SiApplepay, SiGooglepay } from "react-icons/si";
+// context
+import { MovieContext } from "../context/movie.context";
+// axios
+import axios from "axios";
+// useparams
+import { useParams } from "react-router-dom";
+// slider
+import Slider from "react-slick";
 
 const MoviePage = () => {
+  // getting movie id
+  const { id } = useParams();
+
+  //getting data
+  const { movie } = useContext(MovieContext);
+
+  // setting the cast data
+  const [cast, setCast] = useState([]);
+  // setting the similar movies data
+  const [similarMovies, setSimilarMovies] = useState([]);
+  // setting the recommended movies data
+  const [recommended, setRecommended] = useState([]);
+
+  useEffect(() => {
+    const requestCast = async () => {
+      const getCast = await axios.get(`/movie/${id}/credits`);
+
+      setCast(getCast.data.cast);
+    };
+    requestCast();
+  }, [id]);
+
+  useEffect(() => {
+    const requestSimilarMovies = async () => {
+      const getSimilarMovies = await axios.get(`/movie/${id}/similar
+      `);
+
+      setSimilarMovies(getSimilarMovies.data.results);
+    };
+    requestSimilarMovies();
+  }, [id]);
+
+  useEffect(() => {
+    const requestRecommendedMovies = async () => {
+      const getRecommendedMovies = await axios.get(`/movie/${id}/recommendations
+      `);
+
+      setRecommended(getRecommendedMovies.data.results);
+    };
+
+    requestRecommendedMovies();
+  }, [id]);
+
   // settings for carousels in movie pages
   const settings = {
     infinity: false,
@@ -43,6 +93,39 @@ const MoviePage = () => {
       },
     ],
   };
+  // settings for cast carousels in movie pages
+  const settingsCast = {
+    infinity: false,
+    speed: 500,
+    slidesToShow: 6,
+    autoplay: false,
+    slidesToScroll: 6,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 2,
+          InitialSlide: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
 
   return (
     <>
@@ -55,11 +138,7 @@ const MoviePage = () => {
         {/* About the movie */}
         <div className="flex flex-col items-start gap-3">
           <h2 className="font-bold text-2xl mt-5">About the Movie</h2>
-          <p>
-            Bruce Wayne and Diana Prince try to bring the metahumans of Earth
-            together after the death of Clark Kent. Meanwhile, Darkseid sends
-            Steppenwolf to Earth with an army to subjugate humans.
-          </p>
+          <p>{movie.overview}</p>
         </div>
 
         <div className="my-10">
@@ -107,23 +186,17 @@ const MoviePage = () => {
         {/* Cast */}
         <div>
           <h3 className="font-semibold text-2xl mb-5">Cast</h3>
-          <div className="flex flex-wrap gap-6">
-            <Cast
-              image="https://in.bmscdn.com/iedb/artist/images/website/poster/large/ben-affleck-292-12-09-2017-05-12-16.jpg"
-              castName="Ben Affleck"
-              role="Batman"
-            />
-            <Cast
-              image="https://in.bmscdn.com/iedb/artist/images/website/poster/large/henry-cavill-23964-04-05-2020-04-25-14.jpg"
-              castName="Henry Cavil"
-              role="Superman"
-            />
-            <Cast
-              image="https://in.bmscdn.com/iedb/artist/images/website/poster/large/gal-gadot-11088-17-10-2017-11-45-36.jpg"
-              castName="Gal Gadot"
-              role="Wonder Woman"
-            />
-          </div>
+
+          <Slider {...settingsCast}>
+            {/* Using map for extracting each cast image */}
+            {cast.map((cast) => (
+              <Cast
+                image={`https://image.tmdb.org/t/p/original/${cast.profile_path}`}
+                castName={cast.original_name}
+                role={cast.character}
+              />
+            ))}
+          </Slider>
         </div>
 
         <div className="my-10">
@@ -134,7 +207,7 @@ const MoviePage = () => {
         <div>
           <PosterSlider
             config={settings}
-            images={PremierImages}
+            images={similarMovies}
             title="You Might Also Like"
             isDark={false}
           />
@@ -147,7 +220,7 @@ const MoviePage = () => {
         <div>
           <PosterSlider
             config={settings}
-            images={PremierImages}
+            images={recommended}
             title="BMS Exclusive"
             isDark={false}
           />

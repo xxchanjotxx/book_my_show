@@ -71,6 +71,50 @@ const NavLg = () => {
   );
 };
 
+const Nav2Lg = () => {
+  return (
+    <>
+      <div className="container mx-auto px-4 flex items-center justify-between">
+        <div className="flex items-center justify-between w-3/5 gap-5">
+          {/* Left list */}
+          <div className="flex items-center gap-3 text-gray-300 text-sm">
+            <ul className="flex items-center gap-5 ">
+              <li className="hover:text-white">Movies</li>
+              <li className="hover:text-white">Stream</li>
+              <li className="hover:text-white">
+                {" "}
+                <a href="/events">Events </a>{" "}
+              </li>
+              <li className="hover:text-white">
+                {" "}
+                <a href="/plays">Plays</a>{" "}
+              </li>
+              <li className="hover:text-white">
+                {" "}
+                <a href="/sports">Sports</a>{" "}
+              </li>
+              <li className="hover:text-white">
+                {" "}
+                <a href="/activities">Activities</a>{" "}
+              </li>
+              <li className="hover:text-white">Buzz</li>
+            </ul>
+          </div>
+        </div>
+        {/* Right list */}
+        <div className="flex items-center flex-end gap-3 text-gray-300 text-sm">
+          <ul className="flex items-center gap-5 ">
+            <li className="hover:text-white">ListYourShow</li>
+            <li className="hover:text-white">Corporates</li>
+            <li className="hover:text-white">Offers</li>
+            <li className="hover:text-white">Gift Cards</li>
+          </ul>
+        </div>
+      </div>
+    </>
+  );
+};
+
 const MovieNavbar = () => {
   return (
     <>
@@ -87,6 +131,15 @@ const MovieNavbar = () => {
         {/*large screen*/}
         <div className="hidden lg:flex">
           <NavLg />
+        </div>
+      </nav>
+
+      <nav
+        className="py-4 px-4 hidden lg:block"
+        style={{ backgroundColor: " #232639" }}
+      >
+        <div className="hidden lg:flex">
+          <Nav2Lg />
         </div>
       </nav>
     </>
