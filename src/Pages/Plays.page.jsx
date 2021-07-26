@@ -1,8 +1,8 @@
 import React from "react";
 
 //components
-import Poster from "../components/Poster/poster.component";
 import Filter from "../components/PlaysFilter/Filter.component";
+import Poster from "../components/Poster_leftover/poster.component";
 
 const PlaysPage = () => {
   return (

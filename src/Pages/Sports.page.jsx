@@ -1,6 +1,7 @@
 import React from "react";
 import Filter from "../components/PlaysFilter/Filter.component";
-import Poster from "../components/Poster/poster.component";
+import Poster from "../components/Poster_leftover/poster.component";
+
 
 const SportsPage = () => {
   return (
