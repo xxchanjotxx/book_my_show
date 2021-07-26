@@ -22,6 +22,7 @@ axios.defaults.baseURL = "https://api.themoviedb.org/3";
 
 // creating empty object for params to work
 axios.defaults.params = {};
+// getting the API key from the .env file
 axios.defaults.params["api_key"] = process.env.REACT_APP_API_KEY;
 
 function App() {

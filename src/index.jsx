@@ -10,6 +10,7 @@ import MovieProvider from "./context/movie.context";
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
+      {/* Getting the Movie provider from the context to provide API to everyone */}
       <MovieProvider>
         <App />
       </MovieProvider>

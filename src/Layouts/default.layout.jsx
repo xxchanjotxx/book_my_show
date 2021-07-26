@@ -1,14 +1,15 @@
 import React from "react";
-import HeroCarousel from "../components/Hero_Carousel/hero_carousel.component";
 
-//importing navbar component
+//importing component
 import Navbar from "../components/Navbar/navbar.component";
+import HeroCarousel from "../components/Hero_Carousel/hero_carousel.component";
 
 const DefaultLayout = (props) => {
   return (
     <>
       <Navbar />
       <HeroCarousel />
+      {/* Rendering homepage here */}
       {props.children}
     </>
   );
