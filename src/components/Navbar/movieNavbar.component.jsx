@@ -79,7 +79,9 @@ const Nav2Lg = () => {
           {/* Left list */}
           <div className="flex items-center gap-3 text-gray-300 text-sm">
             <ul className="flex items-center gap-5 ">
-              <li className="hover:text-white">Movies</li>
+              <li className="hover:text-white">
+                <a href="/"> Movies</a>
+              </li>
               <li className="hover:text-white">Stream</li>
               <li className="hover:text-white">
                 {" "}

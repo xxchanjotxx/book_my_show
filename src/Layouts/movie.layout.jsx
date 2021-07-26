@@ -26,8 +26,7 @@ const MovieLayout = (props) => {
     };
 
     requestMovie();
-  }, []);
-
+  }, [id]);
   return (
     <>
       <MovieNavbar />

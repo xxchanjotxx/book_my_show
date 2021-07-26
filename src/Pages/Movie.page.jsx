@@ -41,8 +41,7 @@ const MoviePage = () => {
 
   useEffect(() => {
     const requestSimilarMovies = async () => {
-      const getSimilarMovies = await axios.get(`/movie/${id}/similar
-      `);
+      const getSimilarMovies = await axios.get(`/movie/${id}/similar`);
 
       setSimilarMovies(getSimilarMovies.data.results);
     };
@@ -51,8 +50,9 @@ const MoviePage = () => {
 
   useEffect(() => {
     const requestRecommendedMovies = async () => {
-      const getRecommendedMovies = await axios.get(`/movie/${id}/recommendations
-      `);
+      const getRecommendedMovies = await axios.get(
+        `/movie/${id}/recommendations`
+      );
 
       setRecommended(getRecommendedMovies.data.results);
     };

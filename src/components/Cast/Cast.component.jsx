@@ -12,8 +12,8 @@ const Cast = (props) => {
             className="w-full h-full rounded-full"
           />
         </div>
-        <h1 className="text-xl font-normal">{props.castName}</h1>
-        <h5 className="text-gray-700 text-sm font-medium"> as {props.role}</h5>
+        <h1 className="text-lg font-normal">{props.castName}</h1>
+        <h5 className="text-gray-700 text-xs font-medium"> as {props.role}</h5>
       </div>
     </div>
   );

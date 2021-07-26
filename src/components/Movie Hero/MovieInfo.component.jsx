@@ -1,9 +1,17 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 
 // context
 import { MovieContext } from "../../context/movie.context";
 
+// component
+import PaymentModal from "../PaymentModal/Payment.component";
+
 const MovieInfo = () => {
+  // For payment
+  const [isOpen, setIsOpen] = useState(false);
+  // for price
+  const [price, setPrice] = useState(0);
+
   const { movie } = useContext(MovieContext);
 
   // for genres, its an array.
@@ -14,9 +22,19 @@ const MovieInfo = () => {
 
   const genres = movie.genres?.map(({ name }) => name).join(", ");
   const language = movie.spoken_languages?.map(({ name }) => name).join(", ");
-  
+
+  const rentMovies = () => {
+    setIsOpen(true);
+    setPrice(149);
+  };
+  const buyMovies = () => {
+    setIsOpen(true);
+    setPrice(599);
+  };
+
   return (
     <>
+      <PaymentModal isOpen={isOpen} setIsOpen={setIsOpen} price={price} />
       <div>
         {/* Premier line */}
         <div className="pb-4 flex items-center gap-3 mb-3 md:px-4 md:py-2">
@@ -54,16 +72,18 @@ const MovieInfo = () => {
           {/* buttons */}
           <div className="flex item-center gap-3 mb-6 md:w-screen lg:w-full md:px-4 ">
             <button
-              className="text-white lg:px-24 rounded-lg lg:py-3 px-11 py-2 md:w-full"
+              onClick={rentMovies}
+              className="text-white lg:px-20 rounded-lg lg:py-6 px-11 py-2 md:w-full"
               style={{ backgroundColor: "#ED4163" }}
             >
               Rent ₹159
             </button>
             <button
-              className="text-white lg:px-24 rounded-lg lg:py-3 px-11 py-2 md:w-full"
+              onClick={buyMovies}
+              className="text-white lg:px-20 rounded-lg lg:py-6 px-11 py-2 md:w-full"
               style={{ backgroundColor: "#ED4163" }}
             >
-              Buy ₹689
+              Buy ₹599
             </button>
           </div>
         </div>

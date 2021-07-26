@@ -46,11 +46,13 @@ const NavLg = () => {
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center w-3/5 gap-5">
           <div className="w-12 h-12">
-            <img
-              src="https://i.ibb.co/zPBYW3H/imgbin-bookmyshow-office-android-ticket-png.png"
-              alt="logo"
-              className="w-full h-full"
-            />
+            <a href="/">
+              <img
+                src="https://i.ibb.co/zPBYW3H/imgbin-bookmyshow-office-android-ticket-png.png"
+                alt="logo"
+                className="w-full h-full"
+              />
+            </a>
           </div>
 
           <div className="w-full flex items-center gap-4 bg-white p-2 rounded-md">
@@ -88,7 +90,9 @@ const Nav2Lg = () => {
           {/* Left list */}
           <div className="flex items-center gap-3 text-gray-300 text-sm">
             <ul className="flex items-center gap-5 ">
-              <li className="hover:text-white">Movies</li>
+              <li className="hover:text-white">
+                <a href="/"> Movies</a>
+              </li>
               <li className="hover:text-white">Stream</li>
               <li className="hover:text-white">
                 {" "}
@@ -143,7 +147,10 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <nav className="py-4 px-4 hidden lg:block" style={{ backgroundColor: " #232639" }}>
+      <nav
+        className="py-4 px-4 hidden lg:block"
+        style={{ backgroundColor: " #232639" }}
+      >
         <div className="hidden lg:flex">
           <Nav2Lg />
         </div>
