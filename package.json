@@ -18,7 +18,7 @@
     "slick-carousel": "^1.8.1",
     "web-vitals": "^1.1.2"
   },
-  "homepage": "https://xxchanjotxx.github.io/book_my_show",
+  "homepage": "https://book-my-show-one.vercel.app",
   "scripts": {
     "start": "craco start",
     "build": "CI=false && craco build",
